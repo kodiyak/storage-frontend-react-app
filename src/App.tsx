@@ -1,9 +1,18 @@
-import React from 'react';
+import React, { useEffect } from 'react'
+import AdminMasterPage from './components/MasterPages/AdminMasterPage/index'
+import AdminRoutes from './routes/AdminRoutes'
+import AuthApi from './services/api/AuthApi'
 
-function App() {
+const App: React.FC = () => {
+  useEffect(() => {
+    AuthApi.bootstrap()
+  }, [])
+
   return (
-    <h1>App</h1>
-  );
+    <AdminMasterPage>
+      <AdminRoutes />
+    </AdminMasterPage>
+  )
 }
 
-export default App;
+export default App
