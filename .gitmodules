@@ -1,3 +1,6 @@
 [submodule ".\\packages\\react-chakra-ui"]
 	path = .\\packages\\react-chakra-ui
 	url = https://github.com/friendlysource-dev/react-chakra-ui
+[submodule "src/packages/react-chakra-ui"]
+	path = src/packages/react-chakra-ui
+	url = https://github.com/friendlysource-dev/react-chakra-ui
