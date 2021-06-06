@@ -60,6 +60,13 @@ export class Collection<T = any> extends TypedEmitter<{
     return !!this.findByPrimaryKey(primaryKey)
   }
 
+  public findBy(field: string, value: any) {
+    return this.collection.find((item) => {
+      // @ts-ignore
+      return item[field] === value
+    })
+  }
+
   public findByPrimaryKey(primaryKey: any) {
     return this.collection.find((item) => {
       return this.getPrimaryKey(item) === primaryKey

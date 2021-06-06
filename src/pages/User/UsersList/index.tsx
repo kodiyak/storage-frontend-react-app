@@ -12,11 +12,12 @@ const UsersList: React.FC = () => {
   return (
     <DefaultPage title="Users">
       <Col>
-        <SimpleGrid gap={4} columns={5}>
+        <SimpleGrid gap={4} columns={3}>
           {data.map((gDriveAuth) => (
             <GDriveAuthCard
               key={`gDriveAuth${gDriveAuth.id}`}
               gDriveAuth={gDriveAuth}
+              canReload
             />
           ))}
         </SimpleGrid>

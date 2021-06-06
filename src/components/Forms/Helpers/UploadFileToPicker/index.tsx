@@ -10,34 +10,36 @@ import {
 } from '../../../../packages/react-chakra-ui/src/icons'
 
 import GDriveIcon from '../../../../assets/img/gdrive.png'
+import GPhotosIcon from '../../../../assets/img/gphotos.png'
 import HdIcon from '../../../../assets/img/hd.png'
 import { Image } from '@chakra-ui/react'
 
 const UploadFileToPicker: React.FC<Partial<SelectOptionsFieldProps>> = ({
+  onChange,
   ...rest
 }) => {
   return (
     <SelectOptionsField
-      index="id"
-      label="label"
-      name="from_type"
+      name="to_type"
       options={[
         {
           id: 'server',
-          label: {
-            image: HdIcon,
-            name: 'Server'
-          }
+          image: HdIcon,
+          name: 'Server'
         },
         {
           id: 'gdrive',
-          label: {
-            image: GDriveIcon,
-            name: 'Google Drive'
-          }
+          image: GDriveIcon,
+          name: 'Google Drive'
+        },
+        {
+          id: 'gphotos',
+          image: GPhotosIcon,
+          name: 'Google Photos'
         }
       ]}
-      render={({ label, toggle, isChecked }) => {
+      onChange={([v]) => onChange?.(v?.id)}
+      render={({ value, toggle, isChecked }) => {
         return (
           <Col
             h={32}
@@ -51,10 +53,10 @@ const UploadFileToPicker: React.FC<Partial<SelectOptionsFieldProps>> = ({
             onClick={toggle}
           >
             <Row flex={1} alignItems="center" justifyContent="center" fontSize="4xl">
-              <Image maxH={14} w="100%" objectFit="contain" src={label.image} />
+              <Image maxH={14} w="100%" objectFit="contain" src={value.image} />
             </Row>
             <TextMini px={4} pb={2}>
-              {label.name}
+              {value.name}
             </TextMini>
           </Col>
         )

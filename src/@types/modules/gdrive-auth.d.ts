@@ -6,7 +6,8 @@ declare namespace App {
       clientSecret: string
       refreshToken: string
     }
-    files?: import('googleapis').drive_v3.Schema$FileList
+    files?: import('googleapis').drive_v3.Schema$File[]
+    folders?: import('googleapis').drive_v3.Schema$File[]
     about?: import('googleapis').drive_v3.Schema$About
   }
 }

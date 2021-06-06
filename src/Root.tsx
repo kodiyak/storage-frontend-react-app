@@ -3,7 +3,7 @@ import AdminMasterPage from './components/MasterPages/AdminMasterPage/index'
 import AdminRoutes from './routes/AdminRoutes'
 import AuthApi from './services/api/AuthApi'
 
-const App: React.FC = () => {
+const Root: React.FC = () => {
   useEffect(() => {
     AuthApi.bootstrap()
   }, [])
@@ -15,4 +15,4 @@ const App: React.FC = () => {
   )
 }
 
-export default App
+export default Root

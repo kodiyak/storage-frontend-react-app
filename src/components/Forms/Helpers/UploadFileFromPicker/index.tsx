@@ -10,37 +10,31 @@ import {
 } from '../../../../packages/react-chakra-ui/src/icons'
 
 const UploadFileFromPicker: React.FC<Partial<SelectOptionsFieldProps>> = ({
+  onChange,
   ...rest
 }) => {
   return (
     <SelectOptionsField
-      index="id"
-      label="label"
       name="from_type"
       options={[
         {
           id: 'url',
-          label: {
-            icon: <ExternalLinkIcon />,
-            name: 'URL'
-          }
+          icon: <ExternalLinkIcon />,
+          name: 'URL'
         },
         {
           id: 'localFile',
-          label: {
-            icon: <FilePlusIcon />,
-            name: 'Local File'
-          }
+          icon: <FilePlusIcon />,
+          name: 'Local File'
         },
         {
           id: 'torrent',
-          label: {
-            icon: <TorrentIcon />,
-            name: 'Torrent'
-          }
+          icon: <TorrentIcon />,
+          name: 'Torrent'
         }
       ]}
-      render={({ label, toggle, isChecked }) => {
+      onChange={([v]) => onChange?.(v?.id)}
+      render={({ value, toggle, isChecked }) => {
         return (
           <Col
             h={32}
@@ -54,10 +48,10 @@ const UploadFileFromPicker: React.FC<Partial<SelectOptionsFieldProps>> = ({
             onClick={toggle}
           >
             <Row flex={1} alignItems="center" justifyContent="center" fontSize="4xl">
-              {label.icon}
+              {value.icon}
             </Row>
             <TextMini px={4} pb={2}>
-              {label.name}
+              {value.name}
             </TextMini>
           </Col>
         )
