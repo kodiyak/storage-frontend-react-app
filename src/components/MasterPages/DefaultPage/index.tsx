@@ -8,6 +8,7 @@ interface DefaultPageProps {
   rightContent?: React.ReactNode
   title?: React.ReactNode
   description?: React.ReactNode
+  SidebarLeft?: React.ReactNode
 }
 
 const DefaultPage: React.FC<DefaultPageProps> = ({
@@ -15,12 +16,13 @@ const DefaultPage: React.FC<DefaultPageProps> = ({
   description,
   children,
   leftContent,
-  rightContent
+  rightContent,
+  SidebarLeft = <SidebarLeftDefault />
 }) => {
   return (
     <Box w="100%" h="100%">
       <Row w="100%" h="100%">
-        <SidebarLeftDefault />
+        {SidebarLeft}
         <Col px={4} flex={1} overflowY="auto">
           {title && (
             <Row h={24} alignItems="center" flexShrink={0}>

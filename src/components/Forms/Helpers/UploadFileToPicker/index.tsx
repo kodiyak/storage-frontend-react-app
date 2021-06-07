@@ -12,6 +12,7 @@ import {
 import GDriveIcon from '../../../../assets/img/gdrive.png'
 import GPhotosIcon from '../../../../assets/img/gphotos.png'
 import HdIcon from '../../../../assets/img/hd.png'
+import YoutubeIcon from '../../../../assets/img/youtube.png'
 import { Image } from '@chakra-ui/react'
 
 const UploadFileToPicker: React.FC<Partial<SelectOptionsFieldProps>> = ({
@@ -36,6 +37,11 @@ const UploadFileToPicker: React.FC<Partial<SelectOptionsFieldProps>> = ({
           id: 'gphotos',
           image: GPhotosIcon,
           name: 'Google Photos'
+        },
+        {
+          id: 'youtube',
+          image: YoutubeIcon,
+          name: 'Youtube'
         }
       ]}
       onChange={([v]) => onChange?.(v?.id)}

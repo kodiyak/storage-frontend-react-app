@@ -12,8 +12,8 @@ class FileUploadApi {
         from: fileUpload.from,
         to: fileUpload.to,
         url: fileUpload.fileFrom.url,
-        gDriveFolderId: fileUpload.gDriveFolder.id,
-        gDriveAuthId: fileUpload.gDriveAuth.id,
+        gDriveFolderId: fileUpload.gDriveFolder?.id,
+        gDriveAuthId: fileUpload.gDriveAuth?.id,
         options: fileUpload.options
       }
     })
@@ -30,6 +30,14 @@ class FileUploadApi {
           })
         }
         return filesUploads
+      })
+  }
+
+  public async all() {
+    return HttpClient.get<App.FileUpload.Main[]>('/filesuploads')
+      .then((res) => res.data)
+      .then((filesUploads) => {
+        FileUploadCollection.addMany(filesUploads)
       })
   }
 }
