@@ -2,11 +2,11 @@ import { FileChunk } from '../file/FileChunk'
 import Ws from '../Ws'
 export class UploadFileChannel {
   private configs = {
-    chunkSize: 10000,
+    chunkSize: 1000 * 1000 * 4,
     interval: 1000 * 5
   }
 
-  private chunks: string[] = []
+  private chunks: ArrayBuffer[] = []
 
   private fileChunk: FileChunk
 
@@ -18,19 +18,35 @@ export class UploadFileChannel {
     this.chunks = await this.fileChunk.chunk(this.configs.chunkSize)
     const { id } = this.fileSystem
 
-    // console.log('send socket', this.chunks.length)
-
     for (const order in this.chunks) {
-      const chunk = this.chunks[order]
-      // const name = `Chunk_${chunkKey}.mp4`
+      console.log(`[${order}][STARTING]`)
+      console.log('Order', order)
+      console.log('Chunk', this.chunks[order].byteLength)
 
-      // console.log('chunk', chunk)
+      await this.uploadChunk(id, Number(order))
+
+      console.log(`[${order}][MORE]`)
+    }
+  }
+
+  private uploadChunk(id: number, order: number) {
+    return new Promise<void>((resolve) => {
+      const chunk = this.chunks[order]
 
       Ws.socket.emit('upload/file', {
         id,
         order,
         chunk
       })
-    }
+
+      const onMore = (data: any) => {
+        if (data.id === id) {
+          resolve()
+          Ws.socket.off('upload/more', onMore)
+        }
+      }
+
+      Ws.socket.on('upload/more', onMore)
+    })
   }
 }

@@ -1,4 +1,10 @@
-import { Button, Heading, SimpleGrid, Checkbox } from '@chakra-ui/react'
+import {
+  Button,
+  Heading,
+  SimpleGrid,
+  Checkbox,
+  CheckboxGroup
+} from '@chakra-ui/react'
 import React, { useEffect, useState } from 'react'
 import { Col, Row, TextMini } from '../../../packages/react-chakra-ui'
 import { useDisclosure } from '../../../hooks/useDisclosure'
@@ -33,6 +39,14 @@ const FileUploadForm: React.FC<FileUploadFormProps> = (props) => {
     setValue((oldValue) => ({
       ...oldValue,
       gDriveFolder
+    }))
+  }
+
+  const setOptions = (options: string[]) => {
+    console.log('options', options)
+    setValue((oldValue) => ({
+      ...oldValue,
+      options
     }))
   }
 
@@ -71,9 +85,11 @@ const FileUploadForm: React.FC<FileUploadFormProps> = (props) => {
           </Text>
         </Row>
         <Row flex={1}>
-          <Checkbox name="hls_encode" mr={2}>
-            HLS Encode
-          </Checkbox>
+          <CheckboxGroup onChange={setOptions}>
+            <Checkbox value="hlsEncode" mr={2}>
+              HLS Encode
+            </Checkbox>
+          </CheckboxGroup>
         </Row>
       </Row>
     </Col>

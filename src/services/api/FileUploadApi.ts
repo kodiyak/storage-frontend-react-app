@@ -13,16 +13,15 @@ class FileUploadApi {
         to: fileUpload.to,
         url: fileUpload.fileFrom.url,
         gDriveFolderId: fileUpload.gDriveFolder.id,
-        gDriveAuthId: fileUpload.gDriveAuth.id
+        gDriveAuthId: fileUpload.gDriveAuth.id,
+        options: fileUpload.options
       }
     })
-
-    console.log('files datas', filesUploads)
 
     return HttpClient.post<App.FileUpload.Main[]>('/uploads/start', { filesUploads })
       .then((res) => res.data)
       .then((filesUploads) => {
-        FileUploadCollection.addMany(filesUploads)
+        // FileUploadCollection.addMany(filesUploads)
         for (const keyFileUpload in filesUploads) {
           const { id } = filesUploads[keyFileUpload]
           FilesystemFileCollection.set({

@@ -4,9 +4,7 @@ import Root from './Root'
 import { BrowserRouter as Router } from 'react-router-dom'
 import ThemeContainer from './components/Containers/ThemeContainer'
 import ModalsContainer from './components/Containers/ModalsContainer'
-import Ws from './services/socket/Ws'
-
-Ws.boot()
+import './services/socket/Ws'
 
 ReactDOM.render(
   <React.StrictMode>

@@ -5,7 +5,7 @@ export class FileChunk {
 
   private chunkSize = 10000
 
-  private chunks: (string | ArrayBuffer)[] = []
+  private chunks: ArrayBuffer[] = []
 
   constructor(private file: File) {
     this.totalBytes = file.size
@@ -15,13 +15,15 @@ export class FileChunk {
     this.chunkSize = chunkSize
 
     console.log(this.totalBytes, this.chunkSize)
+    console.log('Start Chunk', this.chunks.length)
 
     await this.nextBlob()
+    console.log('Finish Chunk', this.chunks.length)
 
     this.totalBytes = 0
     this.offset = 0
 
-    return this.chunks as string[]
+    return this.chunks
   }
 
   public async nextBlob(): Promise<void> {
@@ -32,16 +34,9 @@ export class FileChunk {
     }
 
     const nextOffset = getNextOffset()
-    // console.log('next', offset, nextOffset)
-    // console.log({
-    //   offset,
-    //   nextOffset,
-    //   totalBytes
-    // })
     const reader = new FileReader()
     const blob = this.file.slice(this.offset, nextOffset)
 
-    // garantir ordem dos dados
     this.chunks.push(await blob.arrayBuffer())
 
     if (nextOffset !== totalBytes) {
@@ -51,32 +46,5 @@ export class FileChunk {
     } else {
       this.offset = totalBytes
     }
-
-    // return new Promise((resolve) => {
-    //   reader.onload = async (e) => {
-    //     if (e.target?.error === null) {
-    //       // @ts-ignore
-    //       const result: string = e.target.result
-
-    //       if (result !== null) {
-    //         // @ts-ignore
-    //         this.chunks.push(result)
-    //       }
-
-    //       if (nextOffset !== totalBytes) {
-    //         this.offset = nextOffset
-
-    //         await this.nextBlob()
-
-    //         resolve()
-    //       } else {
-    //         this.offset = totalBytes
-    //         resolve()
-    //       }
-    //     }
-    //   }
-
-    //   reader.readAsArrayBuffer(blob)
-    // })
   }
 }
