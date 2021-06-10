@@ -40,6 +40,37 @@ class FileUploadApi {
         FileUploadCollection.addMany(filesUploads)
       })
   }
+
+  public async getMainFiles(fileUpload: App.FileUpload.Main) {
+    return HttpClient.get<App.FileUpload.FisicalFile[]>(
+      `/filesuploads/${fileUpload.id}/main`
+    )
+      .then((res) => res.data)
+      .then((files) => {
+        fileUpload.mainFiles = files
+        FileUploadCollection.forceUpdate()
+      })
+  }
+
+  public async getTmpFiles(fileUpload: App.FileUpload.Main) {
+    return HttpClient.get<App.FileUpload.FisicalFile[]>(
+      `/filesuploads/${fileUpload.id}/tmp`
+    )
+      .then((res) => res.data)
+      .then((files) => {
+        fileUpload.tmpFiles = files
+        FileUploadCollection.forceUpdate()
+      })
+  }
+
+  public async getHlsFiles(fileUpload: App.FileUpload.Main) {
+    return HttpClient.get<App.Hls.M3u8[]>(`/filesuploads/${fileUpload.id}/hls`)
+      .then((res) => res.data)
+      .then((files) => {
+        fileUpload.hlsFiles = files
+        FileUploadCollection.forceUpdate()
+      })
+  }
 }
 
 export default new FileUploadApi()

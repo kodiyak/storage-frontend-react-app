@@ -1,13 +1,17 @@
 import React, { useEffect, useState } from 'react'
 import Ws from '../../../../services/socket/Ws'
-import { Progress } from '@chakra-ui/react'
+import { Progress, ProgressProps } from '@chakra-ui/react'
 
-interface FileProgressProps {
+interface FileProgressProps extends ProgressProps {
   fileUpload: App.FileUpload.Main
   name: App.FileUpload.ProgressName
 }
 
-const FileProgress: React.FC<FileProgressProps> = ({ fileUpload, name }) => {
+const FileProgress: React.FC<FileProgressProps> = ({
+  fileUpload,
+  name,
+  ...rest
+}) => {
   const [progress, setProgress] = useState(0)
 
   const onChangeProgress = (progressEvent: App.FileUpload.SocketProgressEvent) => {
@@ -31,6 +35,7 @@ const FileProgress: React.FC<FileProgressProps> = ({ fileUpload, name }) => {
       mt={'auto'}
       rounded="lg"
       my={2}
+      {...rest}
     />
   )
 }

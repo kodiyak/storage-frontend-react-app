@@ -5,7 +5,7 @@ declare namespace App {
       mime_type: string
       file_size: number
       from: 'url' | 'torrent' | 'localFile'
-      to: 'server' | 'gdrive' | 'gphotos' | 'youtube'
+      to: 'server' | 'gdrive' | 'gphotos' | 'youtube' | 'hls'
       server_name: string
       options: any
       tmp_path: string
@@ -20,6 +20,18 @@ declare namespace App {
       g_youtube_file_id: string
       g_photos_album_id: string
       g_photos_file_id: string
+      mainFiles: App.FileUpload.FisicalFile[]
+      tmpFiles: App.FileUpload.FisicalFile[]
+      hlsFiles: App.Hls.M3u8[]
+    }
+
+    export interface FisicalFile {
+      fileName: string
+      name: string
+      type: 'file' | 'dir'
+      stat: {
+        size: number
+      }
     }
 
     export interface FileSystem {
@@ -39,6 +51,8 @@ declare namespace App {
       | 'Upload/Server'
       | 'Upload/GDrive'
       | 'Upload/GPhotos'
+      | 'Upload/Youtube'
+      | 'Process/HLS'
 
     export type SocketProgressEvent = {
       id: number

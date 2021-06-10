@@ -25,7 +25,7 @@ const FileUploadCard: React.FC<FileUploadCardProps> = ({ fileUpload }) => {
         <Row flex={1}>
           <Heading size="md">{Str.truncate(fileUpload.file_name, 20)}</Heading>
         </Row>
-        <Link to={`/files/${fileUpload.id}`}>
+        <Link to={`/file/${fileUpload.id}`}>
           <SlideLeftGroupHover transition="all .2s ease-in-out">
             <Row alignItems="center">
               <TextMini mr={4}>Details</TextMini>

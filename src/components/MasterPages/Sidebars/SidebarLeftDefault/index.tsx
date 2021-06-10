@@ -5,6 +5,7 @@ import SidebarFileUploadItem from './SidebarFileUploadItem/index'
 import { UploadFileChannel } from '../../../../services/socket/upload/UploadFileChannel'
 import { useCollection } from '../../../../hooks/useCollection'
 import FileUploadCollection from '../../../../services/collections/FileUploadCollection'
+import BoxScrollMini from '../../../../packages/react-chakra-ui/src/components/BoxScrollMini/index'
 
 const SidebarLeftDefault: React.FC = () => {
   const filesUploadQueue = useCollection(FileUploadCollection, (filesUploads) => {
@@ -27,46 +28,50 @@ const SidebarLeftDefault: React.FC = () => {
   })
 
   return (
-    <Col w={300} h="100%" bg="darken.100" px={2} overflowY="auto">
-      <Row h={20} alignItems="center">
-        <Square rounded="lg" bg="primary.500" size={16}></Square>
-      </Row>
-      <SimpleGrid gap={2}>
-        <Heading size="xs">Queue</Heading>
-        {filesUploadQueue.data.map((fileUpload) => (
-          <SidebarFileUploadItem
-            key={`fileUpload${fileUpload.id}`}
-            fileUpload={fileUpload}
-          />
-        ))}
-        <Heading size="xs" mt={4}>
-          Uploading
-        </Heading>
-        {filesUploadUploading.data.map((fileUpload) => (
-          <SidebarFileUploadItem
-            key={`fileUpload${fileUpload.id}`}
-            fileUpload={fileUpload}
-          />
-        ))}
-        <Heading size="xs" mt={4}>
-          Processing
-        </Heading>
-        {filesUploadProcessing.data.map((fileUpload) => (
-          <SidebarFileUploadItem
-            key={`fileUpload${fileUpload.id}`}
-            fileUpload={fileUpload}
-          />
-        ))}
-        <Heading size="xs" mt={4}>
-          Uploaded
-        </Heading>
-        {filesUploadUploaded.data.map((fileUpload) => (
-          <SidebarFileUploadItem
-            key={`fileUpload${fileUpload.id}`}
-            fileUpload={fileUpload}
-          />
-        ))}
-      </SimpleGrid>
+    <Col w={300} h="100%" bg="darken.100">
+      <BoxScrollMini color="gray.600">
+        <Col pl={2} pr={4}>
+          <Row h={20} alignItems="center">
+            <Square rounded="lg" bg="primary.500" size={16}></Square>
+          </Row>
+          <SimpleGrid gap={2}>
+            <Heading size="xs">Queue</Heading>
+            {filesUploadQueue.data.map((fileUpload) => (
+              <SidebarFileUploadItem
+                key={`fileUpload${fileUpload.id}`}
+                fileUpload={fileUpload}
+              />
+            ))}
+            <Heading size="xs" mt={4}>
+              Uploading
+            </Heading>
+            {filesUploadUploading.data.map((fileUpload) => (
+              <SidebarFileUploadItem
+                key={`fileUpload${fileUpload.id}`}
+                fileUpload={fileUpload}
+              />
+            ))}
+            <Heading size="xs" mt={4}>
+              Processing
+            </Heading>
+            {filesUploadProcessing.data.map((fileUpload) => (
+              <SidebarFileUploadItem
+                key={`fileUpload${fileUpload.id}`}
+                fileUpload={fileUpload}
+              />
+            ))}
+            <Heading size="xs" mt={4}>
+              Uploaded
+            </Heading>
+            {filesUploadUploaded.data.map((fileUpload) => (
+              <SidebarFileUploadItem
+                key={`fileUpload${fileUpload.id}`}
+                fileUpload={fileUpload}
+              />
+            ))}
+          </SimpleGrid>
+        </Col>
+      </BoxScrollMini>
     </Col>
   )
 }
