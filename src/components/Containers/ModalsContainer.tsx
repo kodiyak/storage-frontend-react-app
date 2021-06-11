@@ -1,8 +1,9 @@
 import React, { useMemo } from 'react'
-import ModalPickGDriveFolder from '../Modals/ModalPickGDriveFolder/index'
+import ModalGenerateHls from '../Modals/ModalGenerateHls'
+import ModalPickGDriveFolder from '../Modals/ModalPickGDriveFolder'
 
 const ModalsContainer: React.FC = () => {
-  const Modals = useMemo(() => [ModalPickGDriveFolder], [])
+  const Modals = useMemo(() => [ModalPickGDriveFolder, ModalGenerateHls], [])
 
   return (
     <>

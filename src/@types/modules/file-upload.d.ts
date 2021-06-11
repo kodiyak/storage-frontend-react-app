@@ -46,14 +46,6 @@ declare namespace App {
       | 'downloading'
       | 'uploaded'
 
-    export type ProgressName =
-      | 'Upload/Tmp'
-      | 'Upload/Server'
-      | 'Upload/GDrive'
-      | 'Upload/GPhotos'
-      | 'Upload/Youtube'
-      | 'Process/HLS'
-
     export type SocketProgressEvent = {
       id: number
       name: App.FileUpload.ProgressName

@@ -71,6 +71,18 @@ class FileUploadApi {
         FileUploadCollection.forceUpdate()
       })
   }
+
+  public async runHlsProcess(fileUpload: App.FileUpload.Main, data: any) {
+    const fileName = data.file.fileName
+    return HttpClient.post(
+      `/filesuploads/${fileUpload.id}/main/ffmpeg/hls/${fileName}`,
+      {
+        sizes: data.sizes
+      }
+    ).then((res) => {
+      console.log('res', res)
+    })
+  }
 }
 
 export default new FileUploadApi()

@@ -41,7 +41,7 @@ const Modal: React.FC<ModalProps> = ({
     <div>
       <ModalChakra isOpen={isOpen} onClose={onClose} {..._modal}>
         <ModalOverlay />
-        <ModalContent rounded="sm" {..._content}>
+        <ModalContent rounded="2xl" bg="gray.800" {..._content}>
           <Row>
             <Col>
               {title && <ModalHeader>{title}</ModalHeader>}

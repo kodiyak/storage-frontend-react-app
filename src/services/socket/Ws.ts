@@ -1,8 +1,10 @@
 import { io, Socket } from 'socket.io-client'
+import { Progress } from './helpers/Progress'
 
 class Ws {
   private booted = false
   public socket!: Socket
+  public progress!: Progress
 
   public constructor() {
     this.boot()
@@ -20,6 +22,8 @@ class Ws {
       this.socket.io.on('error', (err) => {
         console.error('error', err)
       })
+
+      this.progress = new Progress(this)
     }
   }
 }

@@ -7,10 +7,11 @@ import {
   Circle
 } from '@chakra-ui/react'
 import BoxOverlay from '../../../../packages/react-chakra-ui/src/components/BoxOverlay/index'
+import { useProgress } from '../../../../hooks/socket/useProgress'
 
 interface FileCircularProgressProps extends CircularProgressProps {
   fileUpload: App.FileUpload.Main
-  name: App.FileUpload.ProgressName
+  name: App.ProgressName
 }
 
 const FileCircularProgress: React.FC<FileCircularProgressProps> = ({
@@ -21,21 +22,8 @@ const FileCircularProgress: React.FC<FileCircularProgressProps> = ({
   children,
   ...rest
 }) => {
-  const [progress, setProgress] = useState(0)
+  const progress = useProgress(name, `${fileUpload.id}`)
 
-  const onChangeProgress = (progressEvent: App.FileUpload.SocketProgressEvent) => {
-    if (progressEvent.id === fileUpload.id && progressEvent.name === name) {
-      setProgress(() => progressEvent.progress)
-    }
-  }
-
-  useEffect(() => {
-    Ws.socket.on('upload/file/progress', onChangeProgress)
-
-    return () => {
-      Ws.socket.off('upload/file/progress', onChangeProgress)
-    }
-  }, [])
   return (
     <Circle size={size} pos="relative">
       <CircularProgress
