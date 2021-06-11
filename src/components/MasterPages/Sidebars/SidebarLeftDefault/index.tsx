@@ -23,9 +23,6 @@ const SidebarLeftDefault: React.FC = () => {
       return filesUploads.whereIn('status_server_tmp', ['processing']).all()
     }
   )
-  const filesUploadUploaded = useCollection(FileUploadCollection, (filesUploads) => {
-    return filesUploads.whereIn('status_server_tmp', ['uploaded']).all()
-  })
 
   return (
     <Col w={300} h="100%" bg="darken.100">
@@ -55,15 +52,6 @@ const SidebarLeftDefault: React.FC = () => {
               Processing
             </Heading>
             {filesUploadProcessing.data.map((fileUpload) => (
-              <SidebarFileUploadItem
-                key={`fileUpload${fileUpload.id}`}
-                fileUpload={fileUpload}
-              />
-            ))}
-            <Heading size="xs" mt={4}>
-              Uploaded
-            </Heading>
-            {filesUploadUploaded.data.map((fileUpload) => (
               <SidebarFileUploadItem
                 key={`fileUpload${fileUpload.id}`}
                 fileUpload={fileUpload}

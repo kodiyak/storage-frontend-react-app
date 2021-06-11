@@ -19,13 +19,13 @@ export class UploadFileChannel {
     const { id } = this.fileSystem
 
     for (const order in this.chunks) {
-      console.log(`[${order}][STARTING]`)
-      console.log('Order', order)
-      console.log('Chunk', this.chunks[order].byteLength)
+      // console.log(`[${order}][STARTING]`)
+      // console.log('Order', order)
+      // console.log('Chunk', this.chunks[order].byteLength)
 
       await this.uploadChunk(id, Number(order))
 
-      console.log(`[${order}][MORE]`)
+      // console.log(`[${order}][MORE]`)
     }
   }
 
