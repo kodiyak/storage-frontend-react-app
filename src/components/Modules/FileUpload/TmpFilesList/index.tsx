@@ -5,7 +5,7 @@ import {
   Col,
   BoxScrollMini,
   FileTree
-} from '../../../../packages/react-chakra-ui'
+} from '../../../../packages/react-chakra-ui/components'
 
 interface TmpFilesListProps {
   fileUpload: App.FileUpload.Main

@@ -1,7 +1,7 @@
 import { Circle, Square, Image, Spinner } from '@chakra-ui/react'
 import React, { useState } from 'react'
 import Logo from '../../../../../assets/img/logo-2.png'
-import { useLoaders } from '../../../../../hooks/useLoaders'
+import { useLoaders } from '../../../../../packages/react-chakra-ui/hooks'
 
 const LoadingLogo: React.FC = () => {
   const size = 12

@@ -1,6 +1,6 @@
 import { Heading, Box } from '@chakra-ui/react'
 import React from 'react'
-import { Col, Row, TextMini } from '../../../packages/react-chakra-ui'
+import { Col, Row, TextMini } from '../../../packages/react-chakra-ui/components'
 import SidebarLeftDefault from '../Sidebars/SidebarLeftDefault'
 
 interface DefaultPageProps {

@@ -1,7 +1,7 @@
 import { SimpleGrid, Button } from '@chakra-ui/react'
 import React from 'react'
-import { Row } from '../../../packages/react-chakra-ui'
-import InputField from '../../../packages/react-chakra-ui/src/components/Form/InputField'
+import { Row } from '../../../packages/react-chakra-ui/components'
+import InputField from '../../../packages/react-chakra-ui/components/Form/InputField'
 
 const GDriveAccountForm: React.FC = () => {
   return (

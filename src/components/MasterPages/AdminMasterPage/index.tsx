@@ -1,12 +1,16 @@
 import { SimpleGrid, Square, Image, Circle } from '@chakra-ui/react'
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { Col, ContainerScreen, Row } from '../../../packages/react-chakra-ui'
+import {
+  Col,
+  ContainerScreen,
+  Row
+} from '../../../packages/react-chakra-ui/components'
 import {
   HomeIcon,
   UploadIcon,
   UsersIcon
-} from '../../../packages/react-chakra-ui/src/icons'
+} from '../../../packages/react-chakra-ui/icons'
 import SquareButton from './src/SquareButton/index'
 import LoadingLogo from './src/LoadingLogo'
 

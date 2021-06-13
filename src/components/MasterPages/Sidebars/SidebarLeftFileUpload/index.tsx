@@ -1,5 +1,5 @@
 import React from 'react'
-import { Col } from '../../../../packages/react-chakra-ui'
+import { Col } from '../../../../packages/react-chakra-ui/components'
 
 const SidebarLeftFileUpload: React.FC = () => {
   return <Col w={300} h="100%" bg="darken.100" px={2} overflowY="auto"></Col>

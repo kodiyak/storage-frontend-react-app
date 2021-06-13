@@ -1,6 +1,6 @@
 import { Avatar, AvatarProps } from '@chakra-ui/react'
 import React from 'react'
-import { useCollection } from '../../../../hooks/useCollection'
+import { useCollection } from '../../../../packages/react-chakra-ui/hooks'
 import GDriveAuthCollection from '../../../../services/collections/GDriveAuthCollection'
 
 interface GDriveAvatarProps extends AvatarProps {

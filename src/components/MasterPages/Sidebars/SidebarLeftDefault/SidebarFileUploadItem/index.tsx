@@ -9,10 +9,10 @@ import {
   Circle
 } from '@chakra-ui/react'
 import React, { useMemo } from 'react'
-import { Col, Row } from '../../../../../packages/react-chakra-ui'
-import { UploadIcon } from '../../../../../packages/react-chakra-ui/src/icons'
+import { Col, Row } from '../../../../../packages/react-chakra-ui/components'
+import { Str } from '../../../../../packages/react-chakra-ui/helpers'
+import { UploadIcon } from '../../../../../packages/react-chakra-ui/icons'
 import FilesystemFileCollection from '../../../../../services/collections/FileUpload/FilesystemFileCollection'
-import Str from '../../../../../services/helpers/Str'
 import { UploadFileChannel } from '../../../../../services/socket/upload/UploadFileChannel'
 import FileProgress from '../../../../Modules/File/FileProgress/index'
 

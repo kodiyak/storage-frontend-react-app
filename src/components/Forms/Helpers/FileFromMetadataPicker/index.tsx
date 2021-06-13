@@ -1,9 +1,9 @@
 import React from 'react'
-import { useFieldState } from '../../../../packages/react-chakra-ui/src/hooks/useFieldState'
+import { useFieldState } from '../../../../packages/react-chakra-ui/hooks/useFieldState'
 import FileFromMetadata from '../../../Modules/File/FileFromMetadata/index'
 import SelectOptionsField, {
   SelectOptionsFieldProps
-} from '../../../../packages/react-chakra-ui/src/components/Form/SelectOptionsField'
+} from '../../../../packages/react-chakra-ui/components/Form/SelectOptionsField'
 
 interface FileFromMetadataPickerProps extends Partial<SelectOptionsFieldProps> {
   name: string

@@ -1,7 +1,7 @@
 import { Circle, Heading } from '@chakra-ui/react'
 import { title } from 'process'
 import React from 'react'
-import { Col, Row } from '../../../packages/react-chakra-ui'
+import { Col, Row } from '../../../packages/react-chakra-ui/components'
 
 interface CardTitleProps {
   title: React.ReactNode

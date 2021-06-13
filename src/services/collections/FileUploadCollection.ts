@@ -1,4 +1,4 @@
-import { Collection } from '../helpers/Collection'
+import { Collection } from '../../packages/react-chakra-ui/helpers'
 import Ws from '../socket/Ws'
 
 class FileUploadCollection extends Collection<App.FileUpload.Main> {

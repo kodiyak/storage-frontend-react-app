@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
-import { FileTree, Row } from '../../../packages/react-chakra-ui'
-import Modal from '../../Ux/Modal'
-import { useDisclosure } from '../../../hooks/useDisclosure'
+import { FileTree, Row } from '../../../packages/react-chakra-ui/components'
+import Modal from '../../../packages/react-chakra-ui/components/Modal'
 import { drive_v3 } from 'googleapis'
 import { Button } from '@chakra-ui/react'
+import { useDisclosure } from '../../../packages/react-chakra-ui/hooks'
 
 const ModalPickGDriveFolder: React.FC = () => {
   const { data } = useDisclosure('Modal.GDrive.FolderPicker')

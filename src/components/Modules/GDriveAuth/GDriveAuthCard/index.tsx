@@ -9,13 +9,18 @@ import {
 } from '@chakra-ui/react'
 import React from 'react'
 import { BeatLoader } from 'react-spinners'
-import { Row, Col, TextMini, FileSize } from '../../../../packages/react-chakra-ui'
+import {
+  Row,
+  Col,
+  TextMini,
+  FileSize
+} from '../../../../packages/react-chakra-ui/components'
 import GDriveAuthApi from '../../../../services/api/GDriveAuthApi'
-import { usePercent } from '../../../../packages/react-chakra-ui/src/hooks/usePercent'
-import { useLoaders } from '../../../../hooks/useLoaders'
+import { usePercent } from '../../../../packages/react-chakra-ui/hooks/usePercent'
 import { Link } from 'react-router-dom'
-import SlideLeftGroupHover from '../../../../packages/react-chakra-ui/src/components/GroupHover/SlideLeftGroupHover/index'
-import { RightIcon } from '../../../../packages/react-chakra-ui/src/icons'
+import SlideLeftGroupHover from '../../../../packages/react-chakra-ui/components/GroupHover/SlideLeftGroupHover/index'
+import { RightIcon } from '../../../../packages/react-chakra-ui/icons'
+import { useLoaders } from '../../../../packages/react-chakra-ui/hooks'
 
 interface GDriveAuthCardProps extends BoxProps {
   gDriveAuth: App.GDriveAuth

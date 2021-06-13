@@ -3,10 +3,9 @@ import React from 'react'
 import { useParams } from 'react-router-dom'
 import DefaultPage from '../../../components/MasterPages/DefaultPage'
 import LoadingPage from '../../../components/MasterPages/LoadingPage'
-import { useCollection } from '../../../hooks/useCollection'
-import { FileTree } from '../../../packages/react-chakra-ui'
+import { FileTree } from '../../../packages/react-chakra-ui/components'
 import GDriveAuthCollection from '../../../services/collections/GDriveAuthCollection'
-import { useCollect } from '../../../hooks/useCollect'
+import { useCollect, useCollection } from '../../../packages/react-chakra-ui/hooks'
 
 const UserGoogle: React.FC = () => {
   const { id } = useParams<{ id: string }>()

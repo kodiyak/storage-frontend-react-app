@@ -1,6 +1,11 @@
 import { Checkbox, Heading, Input, SimpleGrid } from '@chakra-ui/react'
 import React, { useState } from 'react'
-import { Col, FileSize, Row, TextMini } from '../../../../packages/react-chakra-ui'
+import {
+  Col,
+  FileSize,
+  Row,
+  TextMini
+} from '../../../../packages/react-chakra-ui/components'
 import { Text } from '@chakra-ui/layout'
 
 interface FileFromMetadataProps {

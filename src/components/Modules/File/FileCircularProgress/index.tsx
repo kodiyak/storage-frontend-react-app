@@ -6,7 +6,7 @@ import {
   Progress,
   Circle
 } from '@chakra-ui/react'
-import BoxOverlay from '../../../../packages/react-chakra-ui/src/components/BoxOverlay/index'
+import BoxOverlay from '../../../../packages/react-chakra-ui/components/BoxOverlay/index'
 import { useProgress } from '../../../../hooks/socket/useProgress'
 
 interface FileCircularProgressProps extends CircularProgressProps {

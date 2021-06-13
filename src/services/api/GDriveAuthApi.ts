@@ -1,6 +1,6 @@
+import { Loaders } from '../../packages/react-chakra-ui/helpers'
 import GDriveAuthCollection from '../collections/GDriveAuthCollection'
 import { HttpClient } from '../helpers/clients/HttpClient'
-import Loaders from '../helpers/Loaders'
 class GDriveAuthApi {
   public async list() {
     HttpClient.get<App.GDriveAuth>('/gdrivesauths').then((res) => res.data)

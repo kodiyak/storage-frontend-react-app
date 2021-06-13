@@ -6,13 +6,13 @@ import {
   TextMini,
   FileSize,
   SlideLeftGroupHover
-} from '../../../../packages/react-chakra-ui'
-import { FileIcon, RightIcon } from '../../../../packages/react-chakra-ui/src/icons'
-import Str from '../../../../services/helpers/Str'
+} from '../../../../packages/react-chakra-ui/components'
+import { FileIcon, RightIcon } from '../../../../packages/react-chakra-ui/icons'
 import ImageIcon from '../../../Ux/Icons/ImageIcon'
 import { Text } from '@chakra-ui/layout'
 import GDriveAvatar from '../../GDriveAuth/GDriveAvatar/index'
 import { Link } from 'react-router-dom'
+import { Str } from '../../../../packages/react-chakra-ui/helpers'
 
 interface FileUploadCardProps {
   fileUpload: App.FileUpload.Main

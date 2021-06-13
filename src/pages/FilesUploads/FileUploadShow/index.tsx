@@ -1,9 +1,7 @@
 import React, { useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import DefaultPage from '../../../components/MasterPages/DefaultPage'
-import { useCollection } from '../../../hooks/useCollection'
 import FileUploadCollection from '../../../services/collections/FileUploadCollection'
-import Str from '../../../services/helpers/Str'
 import {
   Button,
   CircularProgress,
@@ -15,14 +13,14 @@ import {
   FileIcon,
   InfoCircleIcon,
   PlayIcon
-} from '../../../packages/react-chakra-ui/src/icons'
+} from '../../../packages/react-chakra-ui/icons'
 import {
   Col,
   Row,
   FileSize,
   TextMini,
   FileTree
-} from '../../../packages/react-chakra-ui'
+} from '../../../packages/react-chakra-ui/components'
 import { Text } from '@chakra-ui/layout'
 import ImageIcon from '../../../components/Ux/Icons/ImageIcon'
 import FileProgress from '../../../components/Modules/File/FileProgress/index'
@@ -31,6 +29,8 @@ import LoadingPage from '../../../components/MasterPages/LoadingPage'
 import HlsFilesList from '../../../components/Modules/FileUpload/HlsFilesList'
 import TmpFilesList from '../../../components/Modules/FileUpload/TmpFilesList'
 import FileCircularProgress from '../../../components/Modules/File/FileCircularProgress'
+import { useCollection } from '../../../packages/react-chakra-ui/hooks'
+import { Str } from '../../../packages/react-chakra-ui/helpers'
 
 const FileUploadShow: React.FC = () => {
   const { id } = useParams<{ id: string }>()

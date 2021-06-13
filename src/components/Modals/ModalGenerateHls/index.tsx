@@ -1,15 +1,15 @@
 import React, { useRef, useState } from 'react'
-import SelectOptionsField from '../../../packages/react-chakra-ui/src/components/Form/SelectOptionsField'
-import { FormProvider } from '../../../packages/react-chakra-ui/src/containers/FormProvider'
+import SelectOptionsField from '../../../packages/react-chakra-ui/components/Form/SelectOptionsField'
+import { FormProvider } from '../../../packages/react-chakra-ui/containers/FormProvider'
 import FileFromMetadata from '../../Modules/File/FileFromMetadata'
-import Modal from '../../Ux/Modal'
-import Row from '../../../packages/react-chakra-ui/src/components/Row/index'
+import Modal from '../../../packages/react-chakra-ui/components/Modal'
+import Row from '../../../packages/react-chakra-ui/components/Row/index'
 import { SimpleGrid, Square, Button, useControllableState } from '@chakra-ui/react'
 import { Text } from '@chakra-ui/layout'
-import { useDisclosure } from '../../../hooks/useDisclosure'
-import { FileIcon } from '../../../packages/react-chakra-ui/src/icons'
-import { BoxOverlay } from '../../../packages/react-chakra-ui'
+import { FileIcon } from '../../../packages/react-chakra-ui/icons'
+import { BoxOverlay } from '../../../packages/react-chakra-ui/components'
 import FileUploadApi from '../../../services/api/FileUploadApi'
+import { useDisclosure } from '../../../packages/react-chakra-ui/hooks'
 
 const ModalGenerateHls: React.FC = () => {
   const { data } = useDisclosure('Modal.FileUpload.Hls')

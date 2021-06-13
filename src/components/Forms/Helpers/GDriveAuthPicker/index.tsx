@@ -1,10 +1,10 @@
 import { MenuItem, Avatar, Badge } from '@chakra-ui/react'
 import React, { useMemo } from 'react'
-import DropdownOptionsField from '../../../../packages/react-chakra-ui/src/components/Form/DropdownOptionsField'
-import { useCollection } from '../../../../hooks/useCollection'
+import DropdownOptionsField from '../../../../packages/react-chakra-ui/components/Form/DropdownOptionsField'
 import GDriveAuthCollection from '../../../../services/collections/GDriveAuthCollection'
-import { Col, Row, TextMini } from '../../../../packages/react-chakra-ui'
+import { Col, Row, TextMini } from '../../../../packages/react-chakra-ui/components'
 import GDriveAuthCard from '../../../Modules/GDriveAuth/GDriveAuthCard/index'
+import { useCollection } from '../../../../packages/react-chakra-ui/hooks'
 
 interface GDriveAuthPickerProps {
   onChange?: (gDriveAuth: App.GDriveAuth) => void

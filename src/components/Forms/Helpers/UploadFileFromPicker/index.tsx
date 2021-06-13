@@ -1,13 +1,13 @@
 import React from 'react'
-import { Col, Row, TextMini } from '../../../../packages/react-chakra-ui'
+import { Col, Row, TextMini } from '../../../../packages/react-chakra-ui/components'
 import SelectOptionsField, {
   SelectOptionsFieldProps
-} from '../../../../packages/react-chakra-ui/src/components/Form/SelectOptionsField'
+} from '../../../../packages/react-chakra-ui/components/Form/SelectOptionsField'
 import {
   ExternalLinkIcon,
   FilePlusIcon,
   TorrentIcon
-} from '../../../../packages/react-chakra-ui/src/icons'
+} from '../../../../packages/react-chakra-ui/icons'
 
 const UploadFileFromPicker: React.FC<Partial<SelectOptionsFieldProps>> = ({
   onChange,

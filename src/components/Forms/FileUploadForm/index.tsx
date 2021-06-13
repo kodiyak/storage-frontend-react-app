@@ -6,12 +6,12 @@ import {
   CheckboxGroup
 } from '@chakra-ui/react'
 import React, { useEffect, useState } from 'react'
-import { Col, Row, TextMini } from '../../../packages/react-chakra-ui'
-import { useDisclosure } from '../../../hooks/useDisclosure'
+import { Col, Row, TextMini } from '../../../packages/react-chakra-ui/components'
 import { drive_v3 } from 'googleapis'
-import { FolderIcon } from '../../../packages/react-chakra-ui/src/icons'
+import { FolderIcon } from '../../../packages/react-chakra-ui/icons'
 import { Text } from '@chakra-ui/layout'
-import { useFieldState } from '../../../packages/react-chakra-ui/src/hooks/useFieldState'
+import { useFieldState } from '../../../packages/react-chakra-ui/hooks/useFieldState'
+import { useDisclosure } from '../../../packages/react-chakra-ui/hooks'
 
 interface FileUploadFormProps {
   name: string

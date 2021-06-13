@@ -1,5 +1,5 @@
 import React from 'react'
-import { BoxOverlay, Col } from '../../../packages/react-chakra-ui'
+import { BoxOverlay, Col } from '../../../packages/react-chakra-ui/components'
 import { Spinner } from '@chakra-ui/react'
 
 const LoadingPage: React.FC = () => {

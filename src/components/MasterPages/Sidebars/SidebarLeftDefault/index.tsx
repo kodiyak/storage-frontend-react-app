@@ -1,11 +1,16 @@
 import { Heading, SimpleGrid, Square, Image, CloseButton } from '@chakra-ui/react'
 import React, { useEffect, useMemo, useState } from 'react'
-import { BoxFile, Col, Row, TextMini } from '../../../../packages/react-chakra-ui'
+import {
+  BoxFile,
+  Col,
+  Row,
+  TextMini
+} from '../../../../packages/react-chakra-ui/components'
 import SidebarFileUploadItem from './SidebarFileUploadItem/index'
 import { UploadFileChannel } from '../../../../services/socket/upload/UploadFileChannel'
-import { useCollection } from '../../../../hooks/useCollection'
 import FileUploadCollection from '../../../../services/collections/FileUploadCollection'
-import BoxScrollMini from '../../../../packages/react-chakra-ui/src/components/BoxScrollMini/index'
+import BoxScrollMini from '../../../../packages/react-chakra-ui/components/BoxScrollMini/index'
+import { useCollection } from '../../../../packages/react-chakra-ui/hooks'
 
 const SidebarLeftDefault: React.FC = () => {
   const filesUploadQueue = useCollection(FileUploadCollection, (filesUploads) => {

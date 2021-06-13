@@ -1,4 +1,4 @@
-import { Collection } from '../../helpers/Collection'
+import { Collection } from '../../../packages/react-chakra-ui/helpers'
 
 class FilesystemFileCollection extends Collection<App.FileUpload.FileSystem> {}
 

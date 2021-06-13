@@ -7,11 +7,8 @@ import {
   Button
 } from '@chakra-ui/react'
 import React from 'react'
-import { Col, Row } from '../../../../../packages/react-chakra-ui'
-import {
-  DownIcon,
-  PlayIcon
-} from '../../../../../packages/react-chakra-ui/src/icons'
+import { Col, Row } from '../../../../../packages/react-chakra-ui/components'
+import { DownIcon, PlayIcon } from '../../../../../packages/react-chakra-ui/icons'
 import { Text } from '@chakra-ui/layout'
 import { Collapse } from '@chakra-ui/transition'
 import ImageIcon from '../../../../Ux/Icons/ImageIcon'
@@ -37,6 +34,11 @@ const M3u8Row: React.FC<M3u8RowProps> = ({ fileUpload, hls }) => {
           >
             <PlayIcon />
           </Square>
+          <Col pl={4}>
+            <Heading size="sm" cursor="default">
+              {hls.id}
+            </Heading>
+          </Col>
           <Col pl={4} flex={1}>
             <Heading size="sm" cursor="default">
               {hls.path}

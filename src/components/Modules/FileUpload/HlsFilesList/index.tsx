@@ -1,11 +1,15 @@
 import { Square, Heading, Badge, Button } from '@chakra-ui/react'
 import React, { useMemo } from 'react'
-import { BoxScrollMini, Col, Row } from '../../../../packages/react-chakra-ui'
-import { PlayIcon } from '../../../../packages/react-chakra-ui/src/icons'
+import {
+  BoxScrollMini,
+  Col,
+  Row
+} from '../../../../packages/react-chakra-ui/components'
+import { PlayIcon } from '../../../../packages/react-chakra-ui/icons'
 import { Text } from '@chakra-ui/layout'
-import BoxOverlay from '../../../../packages/react-chakra-ui/src/components/BoxOverlay/index'
-import { useDisclosure } from '../../../../hooks/useDisclosure'
+import BoxOverlay from '../../../../packages/react-chakra-ui/components/BoxOverlay/index'
 import M3u8Row from './M3u8Row'
+import { useDisclosure } from '../../../../packages/react-chakra-ui/hooks'
 
 interface HlsFilesListProps {
   fileUpload: App.FileUpload.Main
